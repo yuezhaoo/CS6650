@@ -52,6 +52,7 @@ public class Application {
     double throughput = (double) totalRequests / time * 1000;
     String formattedThroughput = String.format("%.2f", throughput);
 
+    System.out.println("Number of Threads: " + numThreads);
     System.out.println("Total run time: " + time + " ms");
     System.out.println("Successful requests: " + successfulRequests.get());
     System.out.println("Failed requests: " + failedRequests.get());
