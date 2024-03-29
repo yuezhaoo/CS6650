@@ -108,11 +108,6 @@ public class MessageConsumer implements Runnable {
 
 
   public static void main(String[] args) throws IOException, TimeoutException {
-    String accessKey = "ASIAQZQ3MPDKAHTDTLUB";
-    String secretKey = "htf5dg8wuYVKr8DOLnLyAmWqpEJQt2FEbCzGeyfs";
-    String sessionToken = "FwoGZXIvYXdzEK3//////////wEaDA8jliRYbLRk3Nan0CLLAcn3pPbc+tE5/5yPzlqxAnAy3wJs8txehJXEkwg7owUwgHcYcei6jVLe/mNH1Zz7FEKhU0iY4xYM/aLIbTh9l1yE23I+jIMjeMxqdqzLZxz7mV/quJarSbdRdSao5Vuq7DkPt+YQ68wNhapKWbN3nG+HTv0hUazxMYXK7LebDnPGnt3OQ7rU6jjth+pfAFQ2TXux2zzgjHuG/yIrlM+Xhascx13Hbf0yvEp9glzX5iKvRrQ8ypm82QP9TmQJpHXuZjoKVW4fwmuw2LkTKL6qjrAGMi1X9YKXopQqayTUt060Rx2F5AYqzgoxHwR2tq5thlDP3nltX4/aRAiewFvmAm4=";
-    AwsCredentials awsCreds = AwsSessionCredentials.create(accessKey, secretKey, sessionToken);
-
     int numThreads = 100;
     String QUEUE_NAME = "cs6650Queue";
 
@@ -138,7 +133,6 @@ public class MessageConsumer implements Runnable {
 
     DynamoDbClient dynamoDbClient = DynamoDbClient.builder()
             .region(Region.US_WEST_2)
-            .credentialsProvider(StaticCredentialsProvider.create(awsCreds))
             .build();
 
 
