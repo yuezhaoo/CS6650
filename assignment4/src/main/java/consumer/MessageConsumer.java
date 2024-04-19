@@ -108,11 +108,6 @@ public class MessageConsumer implements Runnable {
 
 
   public static void main(String[] args) throws IOException, TimeoutException {
-    String accessKey = "ASIAQZQ3MPDKFBJDIA2X";
-    String secretKey = "gPrHV57nOD06OIj7DTnUVlIpCcFDy6Y80I7+djEC";
-    String sessionToken = "IQoJb3JpZ2luX2VjENL//////////wEaCXVzLXdlc3QtMiJGMEQCIG6M8B46xoBgJUMZ3CUHnl/fbXnaYGVbGM9T5jof8TuFAiALWWQDbZqnzRz/Oqg4nG5h3gqTwnupxfOl0Zk9aqiXoCq0AggbEAAaDDA1NDgxODI3MzQ5MiIMAnBW+QSSzf7CtLK2KpEC5kSgkcxS7jVMKrZheLPkMGWXCB5iGte466Jd/ifsTq/tdLEnQDB4fBedgBBaU8AP7g+TQwTGbNcOcka+yubzGpgLVu7y08tQeHDPgpra+fhhKwuUH/4x7+HwnmSu8zLcpwk3WJhkkpz2kvpJTxVmUgG7xwqWCpW+D6su4kFWCGvdAJFrRBlRbOb0rCSGE0KHlhMAe5a67aGGTuaTKVBfnC3KnZu2FoaHcjUZ24PQSS1dpJQ0p/bnzOva1x6ptCBN67GoTh9M8+BOTREP8XChuxzuqQ8ZtjZbgoZcQAr7qhBf69oTNO0Ap13IhMjxKSRbDk+QWqO5ycLt9DxDc/MEmQfyWgqR6cbKzkteUwDpYCNoMJDmirEGOp4BndO3z/4yhjWrVs2bxfPPsNuRqztc9ejftqJIWDURrrfOWX8X+heDAEn517Cn4sKzV/1Ruwa/myXP0zJc7Xt7tlJl7Md447i2q26Nj3syaFcXrzb8rN4woEwbd3Rv9xpRMJKVklntTCAQieDdWDE+Srv6opS2J1Ru5zLiUaMVt7jDpZ2t6937Nzl2NZ0JCs/+d6TdEZJYHRJAgzhYb4g=";
-    AwsCredentials awsCreds = AwsSessionCredentials.create(accessKey, secretKey, sessionToken);
-
     int numThreads = 100;
     String QUEUE_NAME = "cs6650Queue";
 
@@ -138,7 +133,6 @@ public class MessageConsumer implements Runnable {
 
     DynamoDbClient dynamoDbClient = DynamoDbClient.builder()
             .region(Region.US_WEST_2)
-            .credentialsProvider(StaticCredentialsProvider.create(awsCreds))
             .build();
 
 
